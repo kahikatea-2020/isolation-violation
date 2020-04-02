@@ -6,7 +6,7 @@ router.get('/', (req, res) => {
   db.getTopOffenders()
     .then(offenders => {
       const test_offenders = [{
-        name: 'don'
+        name: 'don',
       }, {
         name: 'emily'
       }, {
@@ -22,8 +22,8 @@ router.get('/reports', (req, res) => {
 })
 
 router.post('/reports', (req, res) => {
-  const { violationDesc, offenderId, time, location, comment } = req.body
-  db.submitReport({ violationDesc, offenderId, time, location, comment })
+  const { image, offenderName, comment, location, date, violation } = req.body
+  db.submitReport({ image, offenderName, comment, location, date, violation })
     .then(res.redirect('/'))
 })
 
@@ -33,7 +33,7 @@ router.get('/rules', (req, res) => {
 })
 
 router.get('/offenders', (req, res) => {
-  db.displayOffenders()
+  db.getAllOffenders()
     .then(res.render('offenders'))
 })
 
