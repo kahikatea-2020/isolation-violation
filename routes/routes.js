@@ -23,7 +23,7 @@ router.get('/reports', (req, res) => {
 
 router.post('/reports', (req, res) => {
   const { image, offenderName, comment, location, date, violation } = req.body
-  db.submitReport({ image, offenderName, comment, location, date, violation })
+  db.addNewReport({ image, offenderName, comment, location, date, violation })
     .then(res.redirect('/'))
 })
 
@@ -33,7 +33,7 @@ router.get('/rules', (req, res) => {
 })
 
 router.get('/offenders', (req, res) => {
-  db.getAllOffenders()
+  db.getAllOffenderNames()
     .then(res.render('offenders'))
 })
 
