@@ -5,8 +5,14 @@ const db = require('../db')
 router.get('/', (req, res) => {
   db.getTopOffenders()
     .then(offenders => {
-      const Toffenders = ['don', 'emily', 'lane']
-      res.render('index', Toffenders)
+      const test_offenders = [{
+        name: 'don'
+      }, {
+        name: 'emily'
+      }, {
+        name: 'lane'
+      }]
+      res.render('index', test_offenders)
     })
     .catch(getError(res))
 })
@@ -21,9 +27,9 @@ router.post('/reports', (req, res) => {
     .then(res.redirect('/'))
 })
 
-router.get('/violations', (req, res) => {
+router.get('/rules', (req, res) => {
   db.displayViolations()
-    .then(res.render('violations'))
+    .then(res.render('rules'))
 })
 
 router.get('/offenders', (req, res) => {
