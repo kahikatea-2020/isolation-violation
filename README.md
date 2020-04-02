@@ -1,16 +1,6 @@
 # Isolation Violation
 
-Phase 1 boilerplate project with:
-
- - Express
- - Express Handlebars
- - Jest
- - Nodemon
-
-
-## Install
-
-```
-npm install
-npm start
-```
+## MVP
+- Three tables: violations, submissions, offenders
+- POST form for submissions
+- 
