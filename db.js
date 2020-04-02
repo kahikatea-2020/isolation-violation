@@ -3,7 +3,9 @@ const connection = require('knex')(config)
 
 module.exports = {
   getAllOffenderNames,
-  getAllReports
+  getAllReports,
+  addNewOffender,
+  addNewReport
 }
 
 function getAllOffenderNames(db = connection) {
@@ -14,21 +16,17 @@ function getAllReports(db = connection) {
   return db('reports').select()
 }
 
-//adding new report
-//name
-//comment
-//locatioin
-//date
-//violation
-
-function addNewReport(, , db = connection) {
-  return db('reports').insert({ comment: reportComment, location: reportLocation })
+function addNewReport(reportData, db = connection) {
+  const { image, reportOffenderId, comment, location, date, violation } = reportData;
+  return db('reports').insert({ comment: comment, location: location, image: image, date: date, violation: violation, offender_id: reportOffenderId })
 }
 
-function updateReport(db = connection) {
 
+function addNewOffender(reportData, db = connection) {
+  const { offenderName, offenderImage } = reportData;
+  return db('offenders').insert({ name: offenderName, image: offenderImage })
 }
 
-function addNewOffender() {
+// function updateReport(db = connection) {
 
-}
+// }
