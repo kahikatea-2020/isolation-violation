@@ -2,7 +2,7 @@ const express = require('express')
 const hbs = require('express-handlebars')
 const path = require('path')
 
-const routes = require('./routes')
+const routes = require('./routes/routes')
 
 const server = express()
 server.engine('hbs', hbs())
