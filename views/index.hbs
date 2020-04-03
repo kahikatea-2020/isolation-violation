@@ -1,9 +1,21 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>EDA Phase 1 Express Boilerplate</title>
-  </head>
-  <body>
-    {{ hi }}
-  </body>
-</html>
+<div class="ui grid container">
+  <div class="sixteen wide column">
+    <div class="heading">
+      <h1>ISOLATION VIOLATIONS</h1>
+    </div>
+    <div class="heading-buttons">
+      <a href="/report" class="ui button">Report a Violation</a>
+      <a href="/rules" class="ui button">View Rules</a>
+      <a href="/reports" class="ui button">View/Dispute Reports</a>
+    </div>
+    <div>
+      <h2>Top Offenders</h2>
+      <p>
+        {{#each offenders}}
+        <img style="width: 33%" src="{{image}}"><img>
+        {{name}}
+        {{/each}}
+      </p>
+    </div>
+  </div>
+</div>

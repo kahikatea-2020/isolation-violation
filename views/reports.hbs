@@ -1,11 +1,13 @@
 <div>
-  <form action=>
-    <input name="violationDesc"></input>
-    <label>Example: </label>
-    <input name="offenderId"></input>
-    <input name="time"></input>
-    <input name="location"></input>
-    <textarea name="comment"></textarea>
-  </form>
+   <p>
+  {{#each reports}}
+  Report ID: {{id}}<br>
+  Offender ID: {{offender_id}}<br>
+  {{violation}}<br>
+  {{date}}<br>
+  {{comment}}<br>
+  <img style="width: 33%" src="{{image}}"><img>
+  <br>
+  {{/each}}
+  </p>
 </div>
-{id: 1, violationDesc: "asdgasdgasdg"}

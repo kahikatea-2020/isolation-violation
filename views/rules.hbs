@@ -1,9 +1,11 @@
 <div>
-  <form action=>
-    <input name="violationDesc"></input>
-    <input name="offenderId"></input>
-    <input name="time"></input>
-    <input name="location"></input>
-    <textarea name="comment"></textarea>
-  </form>
+  <h1>Violation Variations</h1>
+  <div class="rules">
+    {{#each data}}
+      <p>
+        Rule {{id}} <br>
+        {{violation}}
+      </p>
+    {{/each}}
+  </div>
 </div>

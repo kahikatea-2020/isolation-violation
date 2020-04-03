@@ -2,6 +2,7 @@
 exports.up = function (knex) {
     return knex.schema.createTable('reports', table => {
         table.increments('id').primary()
+        table.string('name')
         table.string('location')
         table.string('comment')
         table.string('image')
