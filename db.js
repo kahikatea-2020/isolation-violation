@@ -1,5 +1,6 @@
-const config = require('./knexfile')[environment]
-const connection = require('knex')(config)
+const knex = require('knex')
+const config = require('./knexfile').development
+const connection = knex(config)
 
 module.exports = {
   getAllOffenderNames,
@@ -24,6 +25,13 @@ function addNewReport(reportData, db = connection) {
   return db('reports').insert({ comment: comment, location: location, image: image, date: date, violation: violation, offender_id: reportOffenderId })
 }
 
+function getTopOffenders(db = connection) {
+  return db('reports')
+     .select('reports.offender_id')
+     .then(records => {
+
+})
+}
 
 function addNewOffender(reportData, db = connection) {
   const { offenderName } = reportData;
@@ -47,18 +55,3 @@ return db('reports')
   violation: violation, 
   offender_id: reportOffenderId })
 }
-
-function getTopOffenders() {
-  
-}
-
-// FYR hamish
-// function updateTask(id, taskName, db = database) {
-//   return db('todo')
-//     .where('id' id)
-//     .update({ task: taskName })
-// }
-
-// knex('users')
-//   .where({ id: 2 })
-//   .update({ name: 'Homer' })
