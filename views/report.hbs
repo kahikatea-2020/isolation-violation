@@ -4,22 +4,24 @@
   </div>
   <div class="form">
     <form class="report-form" action="/reports" method="POST">
-      <input name="violation"></input>
-      <label>Example: </label>
+      <label>Example:</label>
       <div class="field">
-        <input name="offenderName"></input>
+        <input type="text" name="violation"></input>
       </div>
       <div class="field">
-      <input name="date"></input>
+        <input type="text" name="offenderName"></input>
       </div>
       <div class="field">
-      <input name="location"></input>
+        <input type="text" name="date"></input>
       </div>
       <div class="field">
-      <textarea name="comment"></textarea>
+        <input type="text" name="location"></input>
       </div>
       <div class="field">
-      <input name="image"></input>
+        <textarea name="comment"></textarea>
+      </div>
+      <div class="field">
+        <input name="image"></input>
       </div>
       <button class="submit-button" type="submit">Submit Violation</button>
     </form>

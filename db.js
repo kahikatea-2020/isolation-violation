@@ -1,4 +1,4 @@
-const config = require('./knexfile')[environment]
+const config = require('./knexfile')
 const connection = require('knex')(config)
 
 module.exports = {

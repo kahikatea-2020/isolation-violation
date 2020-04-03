@@ -12,7 +12,6 @@ router.get('/', (req, res) => {
       }]
       res.render('index', testOffenders)
     })
-    .catch(getError(res))
 })
 
 router.get('/reports', (req, res) => {
@@ -26,7 +25,7 @@ router.post('/reports', (req, res) => {
   const { image, offenderName, comment, location, date, violation } = req.body
   db.addNewOffender(offenderName).
   then(id => {
-    db.addNewReport({ image, reportOffenderId = id, comment, location, date, violation })
+    db.addNewReport({ image, id, comment, location, date, violation })
     .then(res.redirect('/'))
   })
 })
@@ -40,7 +39,7 @@ router.get('/violations/:id', (req, res) => {
   const id = req.params.id
   db.getViolationById(id)
   .then(result => {
-    res.render('violations', result))
+    res.render('violations', result)
   })
 })
 
