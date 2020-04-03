@@ -1,0 +1,13 @@
+  
+.heading {
+  display: flex;
+  padding-top: 3rem;
+  justify-content: center;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  max-width: 600px;
+}
